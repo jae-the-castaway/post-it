@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { Roboto } from "next/font/google";
 import Nav from "./auth/Nav";
 import QueryWrapper from "./QueryWrapper";
-
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -26,8 +26,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`mx-4 md:mx-48 xl:mx-96 ${roboto.variable} bg-gray-200`}>
         <QueryWrapper>
-        <Nav />
-        {children}
+          <Nav />
+          <Toaster />
+          {children}
         </QueryWrapper>
       </body>
     </html>
